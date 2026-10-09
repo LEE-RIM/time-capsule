@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f1e8">
+    <meta name="description" content="Write a note for the future. Seal it in a time capsule and open it when the day arrives.">
+    <title>Dear Tomorrow — Time Capsule</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Dear Tomorrow home">
+        <span class="brand-seal" aria-hidden="true">✳</span>
+        <span><strong>dear tomorrow</strong><small>TIME CAPSULE CLUB</small></span>
+      </a>
+      <div class="topbar-note"><span class="online-dot"></span> Just you &amp; this device <span class="topbar-spark">✦</span></div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="postmark" aria-hidden="true"><span>OPEN</span><strong>WHEN</strong><span>THE TIME<br>IS RIGHT</span><i>✳</i></div>
+        <p class="eyebrow">A LITTLE NOTE TO YOUR FUTURE SELF</p>
+        <h1>Some things are<br><em>better opened later.</em></h1>
+        <p class="intro-copy">A hope, a promise, a tiny time machine. Write a note for someone you love—or a version of you that hasn't arrived yet.</p>
+        <a class="scroll-cue" href="#write"><span aria-hidden="true">↓</span> Make your first capsule</a>
+      </section>
+
+      <section class="studio" id="write" aria-labelledby="writeTitle">
+        <div class="studio-heading">
+          <div><p class="eyebrow">YOUR WORDS, SAFELY TUCKED AWAY</p><h2 id="writeTitle">Write a little <em>something.</em></h2></div>
+          <div class="private-note"><span aria-hidden="true">⌑</span> Saved only on this device</div>
+        </div>
+
+        <div class="compose-grid">
+          <form id="capsuleForm" class="compose-panel">
+            <label class="field-label" for="capsuleTitle">GIVE YOUR NOTE A NAME</label>
+            <input class="text-input" id="capsuleTitle" name="title" maxlength="60" placeholder="A little reminder for later" required>
+
+            <label class="field-label message-label" for="capsuleMessage">WHAT DO YOU WANT TO REMEMBER?</label>
+            <textarea class="message-input" id="capsuleMessage" name="message" maxlength="1500" placeholder="Dear future me… I hope you remember how brave you were today." required></textarea>
+            <div class="textarea-meta"><span>Write from the heart. It stays yours.</span><span id="messageCount">0 / 1500</span></div>
+
+            <div class="form-row">
+              <label class="form-field" for="capsuleRecipient"><span class="field-label">A NOTE FOR</span><input class="text-input" id="capsuleRecipient" name="recipient" maxlength="50" placeholder="Future me" required></label>
+              <label class="form-field" for="capsuleDate"><span class="field-label">OPEN ON</span><input class="text-input date-input" id="capsuleDate" name="date" type="date" required></label>
+            </div>
+
+            <div class="form-row label-row">
+              <label class="form-field" for="capsuleLabel"><span class="field-label">PRIVATE CAPSULE LABEL (OPTIONAL)</span><input class="text-input" id="capsuleLabel" name="label" maxlength="32" placeholder="Birthday, future plans…"></label>
+              <label class="form-field" for="capsuleColor"><span class="field-label">CARD COLOUR</span><select class="text-input color-select" id="capsuleColor" name="color"><option value="rose">Rose</option><option value="sage">Sage</option><option value="blue">Blue</option><option value="gold">Gold</option><option value="lavender">Lavender</option></select></label>
+            </div>
+
+            <div class="form-row security-row">
+              <label class="form-field" for="capsuleCode"><span class="field-label">SECRET CODE (8+ CHARACTERS)</span><input class="text-input" id="capsuleCode" name="code" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label>
+              <label class="form-field" for="capsuleCodeConfirm"><span class="field-label">CONFIRM CODE</span><input class="text-input" id="capsuleCodeConfirm" name="codeConfirm" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label>
+            </div>
+
+            <div class="privacy-callout"><span class="privacy-lock" aria-hidden="true">⌑</span><span><strong>Private on this device:</strong> your note is encrypted. Its own code is required after the opening date. The optional label stays visible on this device so you can recognize the capsule. Save the one-time recovery key; without it, a forgotten code cannot be reset.</span></div>
+            <button class="seal-button" id="sealButton" type="submit"><span class="seal-button-icon" aria-hidden="true">✳</span><span>Seal this time capsule</span><span class="seal-button-arrow" aria-hidden="true">→</span></button>
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="letter-stage" aria-label="Live letter preview">
+            <div class="stage-label"><span class="stage-dot"></span> A SNEAK PEEK</div>
+            <article class="letter-card">
+              <div class="letter-top"><span class="letter-mini-brand">DEAR TOMORROW</span><span class="letter-star">✳</span></div>
+              <div class="letter-stamp" aria-hidden="true"><span>SAVED FOR</span><strong id="previewDate">A DAY<br>TO COME</strong><i>✳</i></div>
+              <p class="letter-greeting">Dear <span id="previewRecipient">future me</span>,</p>
+              <h3 id="previewTitle">A little reminder for later</h3>
+              <p class="letter-message" id="previewMessage">Your words will find their way here. Take your time; there's no rush.</p>
+              <div class="letter-signoff"><span>With love,</span><strong>Your past self</strong></div>
+              <div class="letter-bottom"><span>SEALED WITH A LITTLE HOPE</span><span class="letter-cancel">✳</span></div>
+            </article>
+            <p class="stage-caption">A note can be a tiny gift to the person you'll become.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="capsules-section" aria-labelledby="capsulesTitle">
+        <div class="capsules-heading">
+          <div><p class="eyebrow">WAITING JUST FOR YOU</p><h2 id="capsulesTitle">Your time capsules<span class="heading-period">.</span></h2></div>
+          <span class="capsule-count" id="capsuleCount">0 SEALED</span>
+        </div>
+        <div class="backup-tools" aria-label="Encrypted backup tools">
+          <div><strong>Keep a safe copy</strong><span>Backups are encrypted before they leave this browser.</span></div>
+          <div class="backup-actions">
+            <button class="backup-button" id="exportBackup" type="button">Download encrypted backup</button>
+            <button class="backup-button backup-button-secondary" id="importBackup" type="button">Restore from backup</button>
+            <input id="backupFile" type="file" accept=".json,application/json" hidden>
+          </div>
+          <p class="backup-message" id="backupMessage" role="status" aria-live="polite"></p>
+        </div>
+        <div class="capsules-list" id="capsulesList"></div>
+        <div class="empty-state" id="emptyState"><span class="empty-envelope" aria-hidden="true">✉</span><strong>Nothing tucked away just yet.</strong><span>Your first little note is waiting to be written.</span><a href="#write">Write a capsule <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <footer class="footer"><a class="brand footer-brand" href="./"><span class="brand-seal" aria-hidden="true">✳</span><span><strong>dear tomorrow</strong><small>TIME CAPSULE CLUB</small></span></a><span>Made for a future moment.</span><span>Private by design · This browser only</span></footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
